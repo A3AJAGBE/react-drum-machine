@@ -7,7 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-span {
+h1 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: oblique;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  
 }
