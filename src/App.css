@@ -19,3 +19,7 @@ border: 1px solid rgba(24, 0, 102, 0.5);
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
 }
+
+.drum-pad {
+    font-size: 1.5rem;
+}
