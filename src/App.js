@@ -19,27 +19,13 @@ class App extends React.Component {
 
 				<main>
 					<Container id="drum-machine">
-						<Row className="p-3 mb-5 rounded" id="Board-Row">
-							<Col md={6} className="Board-Grid" id="Board-Grid">
-								<Button variant="secondary" size="lg" className="drum-pad">Q</Button>
-								<Button variant="secondary" size="lg" className="drum-pad">W</Button>
-								<Button variant="secondary" size="lg" className="drum-pad">E</Button>
-
-								<Button variant="secondary" size="lg" className="drum-pad">A</Button>
-								<Button variant="secondary" size="lg" className="drum-pad">S</Button>
-								<Button variant="secondary" size="lg" className="drum-pad">D</Button>
-
-								<Button variant="secondary" size="lg" className="drum-pad">Z</Button>
-								<Button variant="secondary" size="lg" className="drum-pad">X</Button>
-								<Button variant="secondary" size="lg" className="drum-pad">C</Button>
+						<Row className="p-3 rounded flex-md-row-reverse g-3 g-md-0" id="Board-Row">
+							<Col md={6} className="">
+								Display
 							</Col>
-							<Col md={6} className="mx-auto">
-							<Card bg="secondary" id="display">
-								<Card.Header as="h3">Dashboard </Card.Header>
-								<Card.Body>
-									<Card.Title>Main Display</Card.Title>
-								</Card.Body>
-							</Card>
+
+							<Col md={6} className="mb-3 mb-md-0">
+								Buttons
 							</Col>
 						</Row>
 					</Container>
