@@ -12,3 +12,10 @@ backdrop-filter: blur(4.9px);
 -webkit-backdrop-filter: blur(4.9px);
 border: 1px solid rgba(24, 0, 102, 0.5);
 }
+
+.Board-Grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
