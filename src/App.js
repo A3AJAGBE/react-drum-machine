@@ -14,7 +14,7 @@ class App extends React.Component {
 			<Container fluid id="App-Container">
 
 				<header className="py-3 mb-4 text-center border-bottom">
-					<h1 className="fw-bold text-md-start">A3AJAGBE Drum Machine</h1>
+					<h1 className="fw-bold text-md-start px-2">A3AJAGBE Drum Machine</h1>
 				</header>
 
 				<main>
