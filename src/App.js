@@ -121,25 +121,29 @@ const SmoothPianoSounds = [
   },
 ];
 
-class DrumPad extends React.Component {
-	render() {
-		return (
-			<Col md={6} className="mb-3 Board-Grid">
-				{
-					HeaterKitSounds.map(sound => {
-						return <Button variant="secondary" size="lg" className="drum-pad" id={sound.keypress}>
-						{sound.keypress}
-						<audio src={sound.url} id={sound.keypress} className="clip"></audio>
-						</Button>
-					})
-				}
-			</Col>
-		);
-	}
+const play = (keyPress) => {
+	const audio = document.getElementById(keyPress);
+	audio.currentTime = 0;
+	audio.play();
 }
 
-class App extends React.Component {
- 
+const DrumPad = (props) => {
+	return (
+		<Col md={6} className="mb-3 Board-Grid">
+			{
+				HeaterKitSounds.map(sound => {
+					return <Button variant="secondary" size="lg" className="drum-pad" onClick={() => props.play(sound.keypress)}>
+					{sound.keypress}
+					<audio id={sound.keypress} className="clip" src={sound.url}></audio>
+					</Button>
+				})
+			}
+		</Col>
+	);
+}
+
+class App extends React.Component {	
+	
 	render() {
 		return (
 			<Container fluid id="App-Container">
@@ -160,9 +164,7 @@ class App extends React.Component {
 								</Card>
 							</Col>
 
-							
-
-							<DrumPad />
+							<DrumPad play={play} />
 						</Row>
 					</Container>
 				</main>
