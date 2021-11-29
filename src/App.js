@@ -30,17 +30,18 @@ class App extends React.Component {
 							</Col>
 
 							<Col md={6} className="mb-3 Board-Grid">
-								<Button variant="secondary" size="lg" className="drum-pad">Q</Button>
-                                <Button variant="secondary" size="lg" className="drum-pad">W</Button>
-                                <Button variant="secondary" size="lg" className="drum-pad">E</Button>
+								<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-q">Q
+								</Button>
+                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-w">W</Button>
+                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-e">E</Button>
 
-                                <Button variant="secondary" size="lg" className="drum-pad">A</Button>
-                                <Button variant="secondary" size="lg" className="drum-pad">S</Button>
-                                <Button variant="secondary" size="lg" className="drum-pad">D</Button>
+                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-a">A</Button>
+                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-s">S</Button>
+                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-d">D</Button>
 
-                                <Button variant="secondary" size="lg" className="drum-pad">Z</Button>
-                                <Button variant="secondary" size="lg" className="drum-pad">X</Button>
-								<Button variant="secondary" size="lg" className="drum-pad">C</Button>
+                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-z">Z</Button>
+                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-x">X</Button>
+								<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-c">C</Button>
 							</Col>
 						</Row>
 					</Container>
