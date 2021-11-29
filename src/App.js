@@ -7,6 +7,27 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
+class DrumPad extends React.Component {
+	render() {
+		return (
+			<Col md={6} className="mb-3 Board-Grid">
+				<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-q">Q
+				</Button>
+				<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-w">W</Button>
+				<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-e">E</Button>
+
+				<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-a">A</Button>
+				<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-s">S</Button>
+				<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-d">D</Button>
+
+				<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-z">Z</Button>
+				<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-x">X</Button>
+				<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-c">C</Button>
+			</Col>
+		);
+	}
+}
+
 class App extends React.Component {
  
 	render() {
@@ -29,20 +50,7 @@ class App extends React.Component {
 								</Card>
 							</Col>
 
-							<Col md={6} className="mb-3 Board-Grid">
-								<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-q">Q
-								</Button>
-                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-w">W</Button>
-                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-e">E</Button>
-
-                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-a">A</Button>
-                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-s">S</Button>
-                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-d">D</Button>
-
-                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-z">Z</Button>
-                                <Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-x">X</Button>
-								<Button variant="secondary" size="lg" className="drum-pad" id="drum-pad-c">C</Button>
-							</Col>
+							<DrumPad />
 						</Row>
 					</Container>
 				</main>
