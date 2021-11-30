@@ -132,7 +132,7 @@ const DrumPad = (props) => {
 		<Col md={6} className="mb-3 Board-Grid">
 			{
 				HeaterKitSounds.map((sound, index) => {
-					return <Button variant="secondary" size="lg" className="drum-pad" id={index} onClick={() => props.play(sound.keypress)}>
+					return <Button size="lg" className="drum-pad theme-button fs-1" id={index} onClick={() => props.play(sound.keypress)}>
 					{sound.keypress}
 					<audio id={sound.keypress} className="clip" src={sound.url}></audio>
 					</Button>
@@ -156,7 +156,7 @@ class App extends React.Component {
 					<Container id="drum-machine">
 						<Row className="p-3 rounded flex-md-row-reverse g-4" id="Board-Row">
 							<Col md={6} className="">
-								<Card bg="secondary" id="display">
+								<Card id="display" className="theme-card">
 									<Card.Header as="h3">Dashboard </Card.Header>
 									<Card.Body>
 										<Card.Title>Main Display</Card.Title>
