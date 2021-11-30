@@ -131,8 +131,8 @@ const DrumPad = (props) => {
 	return (
 		<Col md={6} className="mb-3 Board-Grid">
 			{
-				HeaterKitSounds.map(sound => {
-					return <Button variant="secondary" size="lg" className="drum-pad" onClick={() => props.play(sound.keypress)}>
+				HeaterKitSounds.map((sound, index) => {
+					return <Button variant="secondary" size="lg" className="drum-pad" id={index} onClick={() => props.play(sound.keypress)}>
 					{sound.keypress}
 					<audio id={sound.keypress} className="clip" src={sound.url}></audio>
 					</Button>
