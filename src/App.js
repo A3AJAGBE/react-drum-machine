@@ -142,35 +142,33 @@ const DrumPad = (props) => {
 	);
 }
 
-class App extends React.Component {	
+const App = () => {	
 	
-	render() {
-		return (
-			<Container fluid id="App-Container">
+	return (
+		<Container fluid id="App-Container">
 
-				<header className="py-3 mb-4 text-center border-bottom">
-					<h1 className="fw-bold text-md-start px-2">A3AJAGBE Drum Machine</h1>
-				</header>
+			<header className="py-3 mb-4 text-center border-bottom">
+				<h1 className="fw-bold text-md-start px-2">A3AJAGBE Drum Machine</h1>
+			</header>
 
-				<main>
-					<Container id="drum-machine">
-						<Row className="p-3 rounded flex-md-row-reverse g-4" id="Board-Row">
-							<Col md={6} className="">
-								<Card id="display" className="theme-card">
-									<Card.Header as="h3">Dashboard </Card.Header>
-									<Card.Body>
-										<Card.Title>Main Display</Card.Title>
-									</Card.Body>
-								</Card>
-							</Col>
+			<main>
+				<Container id="drum-machine">
+					<Row className="p-3 rounded flex-md-row-reverse g-4" id="Board-Row">
+						<Col md={6} className="">
+							<Card id="display" className="theme-card">
+								<Card.Header as="h3">Dashboard </Card.Header>
+								<Card.Body>
+									<Card.Title>Main Display</Card.Title>
+								</Card.Body>
+							</Card>
+						</Col>
 
-							<DrumPad play={play} />
-						</Row>
-					</Container>
-				</main>
-			</Container>
-		);
-	}
+						<DrumPad play={play} />
+					</Row>
+				</Container>
+			</main>
+		</Container>
+	);
 }
 
 export default App;
