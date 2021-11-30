@@ -128,6 +128,20 @@ const play = (keyPress) => {
 }
 
 const DrumPad = (props) => {
+
+	const handleKeyDown = (e) => {
+		HeaterKitSounds.map(sound => {
+			if (e.keyCode === sound.keyCode) {
+				props.play(sound.keypress);
+			}
+		}
+	)}
+		
+
+	React.useEffect(() => {
+		document.addEventListener('keydown', handleKeyDown);
+	}, []);
+
 	return (
 		<Col md={6} className="mb-3 Board-Grid">
 			{
