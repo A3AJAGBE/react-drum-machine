@@ -183,8 +183,10 @@ const App = () => {
 
 	const changeSounds = () => {
 		if (soundTitle === "heaterKit") {
+			setSoundTitle("smoothPiano");
 			setSounds(SOUNDS.smoothPiano);
 		} else {
+			setSoundTitle("heaterKit");
 			setSounds(SOUNDS.heaterKit);
 		}
 	}
