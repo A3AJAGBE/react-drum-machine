@@ -6,6 +6,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
+
+const powerIcon = <FontAwesomeIcon icon={faPowerOff} />
 
 const HeaterKitSounds = [
   {
@@ -170,7 +174,17 @@ const App = () => {
 					<Row className="p-3 rounded flex-md-row-reverse g-4" id="Board-Row">
 						<Col md={6} className="">
 							<Card id="display" className="theme-card">
-								<Card.Header as="h3">Dashboard </Card.Header>
+								<Card.Header>
+									<Row>
+										<Col>
+											<h2 className="m-2">DashBoard</h2>
+										</Col>
+										<Col className="d-flex justify-content-end"> 
+											<Button className="theme-pwr-button fs-4"> {powerIcon} </Button> 
+										</Col>
+									</Row>
+									
+								</Card.Header>
 								<Card.Body>
 									<Card.Title>Main Display</Card.Title>
 								</Card.Body>
