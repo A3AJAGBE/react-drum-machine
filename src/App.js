@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPowerOff, faSlidersH } from '@fortawesome/free-solid-svg-icons';
+import { faPowerOff, faSlidersH} from '@fortawesome/free-solid-svg-icons';
 
 const powerIcon = <FontAwesomeIcon icon={faPowerOff} />
 const SlidersIcon = <FontAwesomeIcon icon={faSlidersH} />
@@ -184,7 +184,7 @@ const SoundsCtrl = (props) => {
 					<Card.Title className="bg-dark p-4 screen text-center"> {props.screenDisplay} </Card.Title>
 				</Card.Body>
 				<Card.Footer> 
-					<Button className="theme-pwr-button fs-5" onClick={props.changeSounds}> {SlidersIcon} Sound Settings</Button>
+					<Button size="lg" className="theme-pwr-button fs-5" onClick={props.changeSounds}> {SlidersIcon} Sound Settings</Button>
 				</Card.Footer>
 			</Card>
 		</Col>
@@ -204,6 +204,7 @@ const App = () => {
 	}
 
 	const changeSounds = () => {
+		setScreenDisplay("");
 		if (soundTitle === "heaterKit") {
 			setSoundTitle("smoothPiano");
 			setSounds(SOUNDS.smoothPiano);
@@ -221,7 +222,7 @@ const App = () => {
 			</header>
 
 			<main>
-				<Container id="drum-machine">
+				<Container id="drum-machine" className="my-5">
 					<Row className="p-3 rounded flex-md-row-reverse g-4" id="Board-Row">
 						<SoundsCtrl changeSounds={changeSounds} screenDisplay={screenDisplay || SOUND_Names[soundTitle]} />
 						<DrumPad play={play} sounds={sounds} />
