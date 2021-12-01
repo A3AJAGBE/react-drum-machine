@@ -126,14 +126,20 @@ const SmoothPianoSounds = [
   },
 ];
 
+const SOUND_Names = {
+	heaterKit: "Heater Kit",
+	smoothPiano: "Smooth Piano Kit"
+}
+
+const SOUNDS = {
+	heaterKit: HeaterKitSounds,
+	smoothPiano: SmoothPianoSounds
+}
+
 const play = (keyPress) => {
 	const audio = document.getElementById(keyPress);
 	audio.currentTime = 0;
 	audio.play();
-}
-
-const changeSounds = () => {
-
 }
 
 const DrumPad = (props) => {
@@ -172,7 +178,16 @@ const SoundsCtrl = (props) => {
 }
 
 const App = () => {	
-	const [sounds, setSounds] = React.useState(HeaterKitSounds);
+	const [soundTitle, setSoundTitle] = React.useState("heaterKit");
+	const [sounds, setSounds] = React.useState(SOUNDS[soundTitle]);
+
+	const changeSounds = () => {
+		if (soundTitle === "heaterKit") {
+			setSounds(SOUNDS.smoothPiano);
+		} else {
+			setSounds(SOUNDS.heaterKit);
+		}
+	}
 	
 	return (
 		<Container fluid id="App-Container">
