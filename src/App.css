@@ -42,3 +42,9 @@ border: 1px solid rgba(24, 0, 102, 0.5);
     outline: none;
     box-shadow: none;
 }
+.theme-pwr-button, .theme-pwr-button:hover, .theme-pwr-button:focus {
+    background-color: #ffffff;
+    color: green;
+    outline: none;
+    box-shadow: none;
+}
