@@ -7,9 +7,10 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { faPowerOff, faSlidersH } from '@fortawesome/free-solid-svg-icons';
 
 const powerIcon = <FontAwesomeIcon icon={faPowerOff} />
+const SlidersIcon = <FontAwesomeIcon icon={faSlidersH} />
 
 const HeaterKitSounds = [
   {
@@ -131,10 +132,14 @@ const play = (keyPress) => {
 	audio.play();
 }
 
+const changeSounds = () => {
+
+}
+
 const DrumPad = (props) => {
 
 	const handleKeyDown = (e) => {
-		HeaterKitSounds.map(sound => {
+		props.sounds.map(sound => {
 			if (e.keyCode === sound.keyCode) {
 				props.play(sound.keypress);
 			}
@@ -149,7 +154,7 @@ const DrumPad = (props) => {
 	return (
 		<Col md={6} className="mb-3 Board-Grid">
 			{
-				HeaterKitSounds.map((sound, index) => {
+				props.sounds.map((sound, index) => {
 					return <Button size="lg" className="drum-pad theme-button fs-1" id={index} onClick={() => props.play(sound.keypress)}>
 					{sound.keypress}
 					<audio id={sound.keypress} className="clip" src={sound.url}></audio>
@@ -160,7 +165,14 @@ const DrumPad = (props) => {
 	);
 }
 
+const SoundsCtrl = (props) => {
+	return (
+		<Button className="theme-pwr-button fs-5" onClick={props.changeSounds}> {SlidersIcon} Sound Settings</Button>
+	);
+}
+
 const App = () => {	
+	const [sounds, setSounds] = React.useState(HeaterKitSounds);
 	
 	return (
 		<Container fluid id="App-Container">
@@ -177,7 +189,7 @@ const App = () => {
 								<Card.Header>
 									<Row>
 										<Col>
-											<h2 className="m-2">DashBoard</h2>
+											<h2 className="my-2">DashBoard</h2>
 										</Col>
 										<Col className="d-flex justify-content-end"> 
 											<Button className="theme-pwr-button fs-4"> {powerIcon} </Button> 
@@ -187,11 +199,15 @@ const App = () => {
 								</Card.Header>
 								<Card.Body>
 									<Card.Title>Main Display</Card.Title>
+									
 								</Card.Body>
+								<Card.Footer> 
+									<SoundsCtrl changeSounds={changeSounds} />
+								</Card.Footer>
 							</Card>
 						</Col>
 
-						<DrumPad play={play} />
+						<DrumPad play={play} sounds={sounds} />
 					</Row>
 				</Container>
 			</main>
