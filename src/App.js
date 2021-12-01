@@ -136,18 +136,12 @@ const SOUNDS = {
 	smoothPiano: SmoothPianoSounds
 }
 
-const play = (keyPress) => {
-	const audio = document.getElementById(keyPress);
-	audio.currentTime = 0;
-	audio.play();
-}
-
 const DrumPad = (props) => {
 
 	const handleKeyDown = (e) => {
 		props.sounds.map(sound => {
 			if (e.keyCode === sound.keyCode) {
-				props.play(sound.keypress);
+				props.play(sound.keypress, sound.id);
 			}
 		}
 	)}
@@ -161,7 +155,7 @@ const DrumPad = (props) => {
 		<Col md={6} className="mb-3 Board-Grid">
 			{
 				props.sounds.map((sound, index) => {
-					return <Button size="lg" className="drum-pad theme-button fs-1" id={index} onClick={() => props.play(sound.keypress)}>
+					return <Button size="lg" className="drum-pad theme-button fs-1" id={index} onClick={() => props.play(sound.keypress, sound.id)}>
 					{sound.keypress}
 					<audio id={sound.keypress} className="clip" src={sound.url}></audio>
 					</Button>
@@ -202,6 +196,13 @@ const App = () => {
 	const [soundTitle, setSoundTitle] = React.useState("heaterKit");
 	const [sounds, setSounds] = React.useState(SOUNDS[soundTitle]);
 
+	const play = (keyPress, sound) => {
+		setScreenDisplay(sound)
+		const audio = document.getElementById(keyPress);
+		audio.currentTime = 0;
+		audio.play();
+	}
+
 	const changeSounds = () => {
 		if (soundTitle === "heaterKit") {
 			setSoundTitle("smoothPiano");
@@ -222,7 +223,7 @@ const App = () => {
 			<main>
 				<Container id="drum-machine">
 					<Row className="p-3 rounded flex-md-row-reverse g-4" id="Board-Row">
-						<SoundsCtrl changeSounds={changeSounds} screenDisplay={SOUND_Names[soundTitle]} />
+						<SoundsCtrl changeSounds={changeSounds} screenDisplay={screenDisplay || SOUND_Names[soundTitle]} />
 						<DrumPad play={play} sounds={sounds} />
 					</Row>
 				</Container>
