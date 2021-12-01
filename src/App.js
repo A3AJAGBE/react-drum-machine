@@ -178,6 +178,7 @@ const SoundsCtrl = (props) => {
 }
 
 const App = () => {	
+	const [screenDisplay, setScreenDisplay] = React.useState("");
 	const [soundTitle, setSoundTitle] = React.useState("heaterKit");
 	const [sounds, setSounds] = React.useState(SOUNDS[soundTitle]);
 
@@ -215,8 +216,7 @@ const App = () => {
 									
 								</Card.Header>
 								<Card.Body>
-									<Card.Title>Main Display</Card.Title>
-									
+									<Card.Title className="bg-dark p-3 screen">{screenDisplay}</Card.Title>
 								</Card.Body>
 								<Card.Footer> 
 									<SoundsCtrl changeSounds={changeSounds} />
