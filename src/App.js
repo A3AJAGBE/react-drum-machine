@@ -140,7 +140,7 @@ const DrumPad = (props) => {
 
 	React.useEffect(() => {
 		document.addEventListener('keydown', handleKeyDown);
-	}, []);
+	});
 
 	return (
 		<Col md={6} className="mb-3 Board-Grid">
