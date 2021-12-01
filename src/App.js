@@ -173,7 +173,27 @@ const DrumPad = (props) => {
 
 const SoundsCtrl = (props) => {
 	return (
-		<Button className="theme-pwr-button fs-5" onClick={props.changeSounds}> {SlidersIcon} Sound Settings</Button>
+		<Col md={6} className="">
+			<Card id="display" className="theme-card">
+				<Card.Header>
+					<Row>
+						<Col>
+							<h2 className="my-2">DashBoard</h2>
+						</Col>
+						<Col className="d-flex justify-content-end"> 
+							<Button className="theme-pwr-button fs-4"> {powerIcon} </Button> 
+						</Col>
+					</Row>
+					
+				</Card.Header>
+				<Card.Body>
+					<Card.Title className="bg-dark p-4 screen text-center"> {props.screenDisplay} </Card.Title>
+				</Card.Body>
+				<Card.Footer> 
+					<Button className="theme-pwr-button fs-5" onClick={props.changeSounds}> {SlidersIcon} Sound Settings</Button>
+				</Card.Footer>
+			</Card>
+		</Col>
 	);
 }
 
@@ -202,28 +222,7 @@ const App = () => {
 			<main>
 				<Container id="drum-machine">
 					<Row className="p-3 rounded flex-md-row-reverse g-4" id="Board-Row">
-						<Col md={6} className="">
-							<Card id="display" className="theme-card">
-								<Card.Header>
-									<Row>
-										<Col>
-											<h2 className="my-2">DashBoard</h2>
-										</Col>
-										<Col className="d-flex justify-content-end"> 
-											<Button className="theme-pwr-button fs-4"> {powerIcon} </Button> 
-										</Col>
-									</Row>
-									
-								</Card.Header>
-								<Card.Body>
-									<Card.Title className="bg-dark p-3 screen">{screenDisplay}</Card.Title>
-								</Card.Body>
-								<Card.Footer> 
-									<SoundsCtrl changeSounds={changeSounds} />
-								</Card.Footer>
-							</Card>
-						</Col>
-
+						<SoundsCtrl changeSounds={changeSounds} screenDisplay={SOUND_Names[soundTitle]} />
 						<DrumPad play={play} sounds={sounds} />
 					</Row>
 				</Container>
